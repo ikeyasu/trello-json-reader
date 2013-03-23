@@ -1,0 +1,93 @@
+{
+    "id": "514e2ed443663060620025f2",
+    "name": "test1",
+    "desc": "",
+    "closed": false,
+    "idOrganization": null,
+    "invited": false,
+    "pinned": true,
+    "url": "https://trello.com/board/test1/514e2ed443663060620025f2",
+    "prefs": {
+        "permissionLevel": "private",
+        "voting": "members",
+        "comments": "members",
+        "invitations": "members",
+        "selfJoin": false,
+        "cardCovers": true
+    },
+    "invitations": [],
+    "memberships": [{
+            "id": "514e2ed443663060620025f6",
+            "idMember": "514a4378ff0ca33413007883",
+            "memberType": "admin",
+            "deactivated": false
+        }
+    ],
+    "shortUrl": "https://trello.com/b/oQKNwzJG",
+    "subscribed": false,
+    "labelNames": {
+        "red": "",
+        "orange": "",
+        "yellow": "",
+        "green": "",
+        "blue": "",
+        "purple": ""
+    },
+    "cards": [],
+    "checklists": [],
+    "members": [{
+            "id": "514a4378ff0ca33413007883",
+            "avatarHash": null,
+            "bio": "",
+            "fullName": "Yasuki Ikeuchi",
+            "initials": "YI",
+            "memberType": "normal",
+            "status": "disconnected",
+            "url": "https://trello.com/yasukiikeuchi1",
+            "username": "yasukiikeuchi1"
+        }
+    ],
+    "actions": [{
+            "id": "514e2ed443663060620025f7",
+            "idMemberCreator": "514a4378ff0ca33413007883",
+            "data": {
+                "board": {
+                    "name": "test1",
+                    "id": "514e2ed443663060620025f2"
+                }
+            },
+            "type": "createBoard",
+            "date": "2013-03-23T22:38:12.539Z",
+            "memberCreator": {
+                "id": "514a4378ff0ca33413007883",
+                "avatarHash": null,
+                "fullName": "Yasuki Ikeuchi",
+                "initials": "YI",
+                "username": "yasukiikeuchi1"
+            }
+        }
+    ],
+    "lists": [{
+            "id": "514e2ed443663060620025f3",
+            "name": "To Do",
+            "closed": false,
+            "idBoard": "514e2ed443663060620025f2",
+            "pos": 16384,
+            "subscribed": false
+        }, {
+            "id": "514e2ed443663060620025f4",
+            "name": "Doing",
+            "closed": false,
+            "idBoard": "514e2ed443663060620025f2",
+            "pos": 32768,
+            "subscribed": false
+        }, {
+            "id": "514e2ed443663060620025f5",
+            "name": "Done",
+            "closed": false,
+            "idBoard": "514e2ed443663060620025f2",
+            "pos": 49152,
+            "subscribed": false
+        }
+    ]
+}
