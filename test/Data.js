@@ -1,7 +1,7 @@
 // vim:sw=2:ts=2:et: 
 var assert = require("assert");
 var fs = require('fs')
-var TrelloReader = require("../trello_reader");
+var TrelloReader = require("../trello-json-reader");
 
 describe('TrelloReader.Data', function(){
   it('should return a instance of Data class', function(){
