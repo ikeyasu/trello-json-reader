@@ -1,3 +1,5 @@
+// vim:sw=2:ts=2:et: 
+// Macha document: http://visionmedia.github.com/mocha/
 var assert = require("assert");
 describe('Hello Mocha!', function(){
   it('should return -1 when the value is not present', function(){
