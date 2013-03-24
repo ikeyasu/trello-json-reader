@@ -1,13 +1,8 @@
 // vim:sw=2:ts=2:et:
 /*
  * (c) 2013 Yasuki Ikeuchi, http://github.com/ikeyasu/trello-json-reader
- * Trello is a Trademark of Fog Creek Software, Inc.
  */
 // Note: YUIDoc syntax: http://yui.github.com/yuidoc/syntax/index.html
-
-if (typeof require !== 'undefined') {
-  var fs = require('fs');
-}
 
 (function(){
   // Save a reference to the global object.
