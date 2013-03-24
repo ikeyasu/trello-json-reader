@@ -8,14 +8,16 @@ describe('TrelloReader.Data', function(){
     assert.equal(true, (new TrelloReader.Data()) instanceof TrelloReader.Data);
   });
 
-  it('should return a instance of Data class (2)', function(){
+  it('should return a instance of Data class (file load)', function(){
     fs.readFile('test/data/testdata-Data-1.json', 'utf8', function(err, data) {
       if (err) throw err;
       assert.equal(true, (new TrelloReader.Data(JSON.parse(data))) instanceof TrelloReader.Data);
     });
   });
+});
 
-  it('should has activity list', function(){
+describe('TrelloReader.Data.activity', function(){
+  it('should has a list', function(){
     fs.readFile('test/data/testdata-Data-1.json', 'utf8', function(err, data) {
       if (err) throw err;
       var data = new TrelloReader.Data(JSON.parse(data));
@@ -25,8 +27,10 @@ describe('TrelloReader.Data', function(){
       assert.equal(undefined, data.activities[2]);
     });
   });
+});
 
-  it('should has card list', function(){
+describe('TrelloReader.Data.cards', function(){
+  it('should has a list', function(){
     fs.readFile('test/data/testdata-Data-1.json', 'utf8', function(err, data) {
       if (err) throw err;
       var data = new TrelloReader.Data(JSON.parse(data));
@@ -36,7 +40,7 @@ describe('TrelloReader.Data', function(){
     });
   });
 
-  it('should has card list with relations to list', function(){
+  it('should has relations with list', function(){
     fs.readFile('test/data/testdata-Data-1.json', 'utf8', function(err, data) {
       if (err) throw err;
       var data = new TrelloReader.Data(JSON.parse(data));
@@ -44,16 +48,20 @@ describe('TrelloReader.Data', function(){
       assert.equal("514e2ed443663060620025f3", data.cards[0].list.id);
     });
   });
+});
 
-  it('should has List', function(){
+describe('TrelloReader.Data.listsHash', function(){
+  it('should has a list internaly', function(){
     fs.readFile('test/data/testdata-Data-1.json', 'utf8', function(err, data) {
       if (err) throw err;
       var data = new TrelloReader.Data(JSON.parse(data));
       assert.equal('514e2ed443663060620025f3', data.listsHash['514e2ed443663060620025f3'].id);
     });
   });
+});
 
-  it('should has List', function(){
+describe('TrelloReader.Data.lists', function(){
+  it('should has list', function(){
     fs.readFile('test/data/testdata-Data-1.json', 'utf8', function(err, data) {
       if (err) throw err;
       var data = new TrelloReader.Data(JSON.parse(data));
@@ -64,7 +72,7 @@ describe('TrelloReader.Data', function(){
     });
   });
 
-  it('should has card list with relations to cards', function(){
+  it('should has relations with cards', function(){
     fs.readFile('test/data/testdata-Data-1.json', 'utf8', function(err, data) {
       if (err) throw err;
       var data = new TrelloReader.Data(JSON.parse(data));
