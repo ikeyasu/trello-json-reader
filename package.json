@@ -1,8 +1,12 @@
 {
-  "name": "TrelloReader"
-  , "version": "0.0.1"
-  , "private": true
-  , "dependencies": {
+  "name": "TrelloReader",
+  "version": "0.0.1",
+  "author": "Yasuki Ikeuchi <ikeyasu@gmail.com>",
+  "private": true,
+  "dependencies": {
     "underscore": ""
+  },
+  "devDependencies": {
+    "docco":""
   }
 }
