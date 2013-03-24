@@ -1,4 +1,9 @@
-// vim:sw=2:ts=2:et: 
+// vim:sw=2:ts=2:et:
+/*
+ * (c) 2013 Yasuki Ikeuchi, http://github.com/ikeyasu/trello_reader
+ * Trello is a Trademark of Fog Creek Software, Inc.
+ */
+// Note: YUIDoc syntax: http://yui.github.com/yuidoc/syntax/index.html
 
 if (typeof require !== 'undefined') {
   var fs = require('fs');
@@ -8,7 +13,14 @@ if (typeof require !== 'undefined') {
   // Save a reference to the global object.
   var root = this;
 
-  // The top-level namespace. 
+  // Require Underscore, if we're on the server, and it's not already present.
+  var _ = root._;
+  if (!_ && (typeof require !== 'undefined')) _ = require('underscore');
+
+  /**
+   * The top-level namespace.
+   * @class TrelloReader
+   */
   var TrelloReader;
   if (typeof exports !== 'undefined') {
     // 'exports' is a global object for server-side js
@@ -17,17 +29,22 @@ if (typeof require !== 'undefined') {
     TrelloReader = root.TrelloReader = {};
   }
   TrelloReader.VERSION = "0.0.1";
-
-  // Require Underscore, if we're on the server, and it's not already present.
-  var _ = root._;
-  if (!_ && (typeof require !== 'undefined')) _ = require('underscore');
-
-  var Data = TrelloReader.Data = function(jsonObj) {
-    this._jsonObj = jsonObj;
-  };
-
+ 
+  /**
+   * Parse json exported from Trello
+   * @method parse
+   * @return Data
+   */
   var parse = TrelloReader.parse = function(json) {
     return new Data(JSON.parse(json));
+  };
+
+  /**
+   * The top-level namespace.
+   * @class Data
+   */ 
+  var Data = TrelloReader.Data = function(jsonObj) {
+    this._jsonObj = jsonObj;
   };
 
 }).call(this);

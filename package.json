@@ -7,6 +7,6 @@
     "underscore": ""
   },
   "devDependencies": {
-    "docco":""
+    "yuidocjs":""
   }
 }
