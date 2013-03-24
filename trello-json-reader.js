@@ -44,30 +44,51 @@
     if (!(jsonObj instanceof Object))
       return;
     /**
+     * Array for all activities.
      * @property activities
      */ 
     self.activities = jsonObj.actions;
     /**
+     * Array for all cards.
      * @property cards
      */ 
     self.cards = jsonObj.cards;
     /**
+     * Array for all lists.
      * @property lists
      */ 
     self.lists = jsonObj.lists;
     self.listsHash = {};
-    /**
-     * @property cards[].list
-     */ 
+    self.cardsHash = {};
     _.each(self.lists, function(value, key) {
-      value.cards = [];
       self.listsHash[value.id] = value;
     });
+    _.each(self.cards, function(value, key) {
+      self.cardsHash[value.id] = value;
+    });
     /**
+     * cards property has reference to comments having oneself.
+     * @property cards[].comments[]
+     */ 
+    _.map(self.cards, function(value, key) {
+      value.comments = [];
+    });
+    _.each(self.activities, function(value, key) {
+      if(value.type == "commentCard") {
+        self.cardsHash[value.data.card.id].comments.push(value);
+      }
+    });
+    /**
+     * cards property has reference to the list including oneself.
+     * @property cards[].list
+     */ 
+    /**
+     * list property has references to cards having oneself.
      * @property lists.cards[]
      */ 
     _.each(self.cards, function(value, key) {
       value.list = self.listsHash[value.idList];
+      if (value.list.cards == undefined) value.list.cards = [];
       value.list.cards.push(value);
     });
   };

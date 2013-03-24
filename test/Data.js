@@ -1,6 +1,7 @@
 // vim:sw=2:ts=2:et: 
 var assert = require("assert");
 var fs = require('fs')
+var _ = require('underscore')
 var TrelloReader = require("../trello-json-reader");
 
 describe('TrelloReader.Data', function(){
@@ -37,6 +38,19 @@ describe('TrelloReader.Data.cards', function(){
       assert.equal(1, data.cards.length);
       assert.equal("514e2f8fb6f1dd2d7c002dce", data.cards[0].id);
       assert.equal(undefined, data.cards[1]);
+    });
+  });
+
+  it('should has a list of comment', function(){
+    fs.readFile('test/data/testdata-Data-2.json', 'utf8', function(err, data) {
+      if (err) throw err;
+      var data = new TrelloReader.Data(JSON.parse(data));
+      var found = _.reduce(data.activities, function(memo, value, key) {
+        return memo || value.type == "commentCard";
+      }, false);
+      assert.equal(true, found);
+      assert.equal("514f84a03ce30630230003ee", data.cards[0].comments[0].id);
+      assert.equal("514f7ecb832735846c005694", data.cards[0].comments[1].id);
     });
   });
 
