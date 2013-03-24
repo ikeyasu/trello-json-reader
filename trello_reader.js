@@ -44,7 +44,37 @@ if (typeof require !== 'undefined') {
    * @class Data
    */ 
   var Data = TrelloReader.Data = function(jsonObj) {
-    this._jsonObj = jsonObj;
+    var self = this;
+    self._jsonObj = jsonObj;
+    if (!(jsonObj instanceof Object))
+      return;
+    /**
+     * @property activities
+     */ 
+    self.activities = jsonObj.actions;
+    /**
+     * @property cards
+     */ 
+    self.cards = jsonObj.cards;
+    /**
+     * @property lists
+     */ 
+    self.lists = jsonObj.lists;
+    self.listsHash = {};
+    /**
+     * @property cards[].list
+     */ 
+    _.each(self.lists, function(value, key) {
+      value.cards = [];
+      self.listsHash[value.id] = value;
+    });
+    /**
+     * @property lists.cards[]
+     */ 
+    _.each(self.cards, function(value, key) {
+      value.list = self.listsHash[value.idList];
+      value.list.cards.push(value);
+    });
   };
 
 }).call(this);
