@@ -2,9 +2,12 @@
   "name": "trello-json-reader.js",
   "version": "0.0.1",
   "author": "Yasuki Ikeuchi <ikeyasu@gmail.com>",
-  "private": true,
   "dependencies": {
     "underscore": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ikeyasu/trello-json-reader.git"
   },
   "devDependencies": {
     "yuidocjs":""
