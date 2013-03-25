@@ -1,10 +1,11 @@
 {
-  "name": "trello-json-reader.js",
+  "name": "trello-json-reader",
   "version": "0.0.1",
   "author": "Yasuki Ikeuchi <ikeyasu@gmail.com>",
   "dependencies": {
     "underscore": ""
   },
+  "main": "./trello-json-reader.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ikeyasu/trello-json-reader.git"
